@@ -13,11 +13,20 @@ Python 3.13.0
 - scipy — correlations and statistics
 
 ## Virtual Environment
+
+**First-time setup (run this automatically if venv does not exist):**
+```
+python -m venv venv
+venv\Scripts\pip install -r requirements.txt
+```
+
 Always use the project's virtual environment for all Python and pip commands:
 - Python: `venv\Scripts\python.exe`
 - Pip: `venv\Scripts\pip.exe`
 
 Never use the global `python` or `pip` commands directly.
+
+If the venv folder is missing when a session starts, create it and install dependencies from requirements.txt before doing anything else.
 
 ## Folder Structure
 - `data/latam_finanzas_2025.csv` — raw data (do not modify)
