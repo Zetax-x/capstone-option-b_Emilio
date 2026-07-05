@@ -409,4 +409,52 @@ plt.close()
 save_last_chart(chart_n)
 print(f"\nChart saved: {chart4_path}")
 
-print(f"\nFase 5 completa. Charts generados: {chart1_path}, {chart2_path}, {chart3_path}, {chart4_path}")
+# =============================================================================
+# SECCIÓN 5 — TASA DE AHORRO vs INGRESO POR GRUPO DE EDAD (chart de validación F2)
+# =============================================================================
+chart_n = next_chart_num()
+
+df["tasa_ahorro"] = df["ahorro_mensual_usd"] / df["ingreso_mensual_usd"]
+age_bins   = [17, 22, 25, 28, 32]
+age_labels = ["18-22", "23-25", "26-28", "29-32"]
+df["grupo_edad"] = pd.cut(df["edad"], bins=age_bins, labels=age_labels)
+
+age_colors = {"18-22": PALETTE[3], "23-25": "#F39C12", "26-28": PALETTE[1], "29-32": PALETTE[0]}
+
+fig, ax = plt.subplots(figsize=(9, 6))
+for grupo, color in age_colors.items():
+    sub = df[df["grupo_edad"] == grupo]
+    ax.scatter(sub["ingreso_mensual_usd"], sub["tasa_ahorro"],
+               alpha=0.45, s=28, color=color, label=grupo, edgecolors="none")
+
+dfpos = df[df["tasa_ahorro"] > 0]
+r_val, p_val = stats.pearsonr(dfpos["ingreso_mensual_usd"], dfpos["tasa_ahorro"])
+slope, intercept, *_ = stats.linregress(dfpos["ingreso_mensual_usd"], dfpos["tasa_ahorro"])
+xr = np.linspace(df["ingreso_mensual_usd"].min(), df["ingreso_mensual_usd"].max(), 100)
+ax.plot(xr, slope * xr + intercept, color=PALETTE[0], lw=1.8, linestyle="--", alpha=0.7)
+
+ax.annotate(f"r = {r_val:.3f}\np = {p_val:.4f}\nn = {len(dfpos)}",
+            xy=(0.97, 0.95), xycoords="axes fraction",
+            ha="right", va="top", fontsize=10,
+            bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.8))
+
+medians = df.groupby("grupo_edad", observed=True)["tasa_ahorro"].median()
+for grupo, med in medians.items():
+    ax.axhline(med, color=age_colors[grupo], lw=1, linestyle=":", alpha=0.6)
+    ax.text(df["ingreso_mensual_usd"].max() * 1.01, med, f"{grupo}: {med:.1%}",
+            va="center", fontsize=8, color=age_colors[grupo])
+
+ax.set_xlabel("Ingreso mensual (USD)", fontsize=11)
+ax.set_ylabel("Tasa de ahorro (ratio)", fontsize=11)
+ax.set_title("Tasa de Ahorro vs. Ingreso por Grupo de Edad", fontsize=13, fontweight="bold")
+ax.legend(title="Grupo de edad", loc="upper left", framealpha=0.9)
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f"{y:.0%}"))
+fig.text(0.5, -0.02, SOURCE, ha="center", fontsize=8, color="gray")
+plt.tight_layout()
+chart5_path = f"charts/{chart_n:02d}_savings_rate_vs_income_by_age.png"
+plt.savefig(chart5_path, dpi=150, bbox_inches="tight")
+plt.close()
+save_last_chart(chart_n)
+print(f"\nChart saved: {chart5_path}")
+
+print(f"\nFase 5 completa. Charts generados: {chart1_path}, {chart2_path}, {chart3_path}, {chart4_path}, {chart5_path}")

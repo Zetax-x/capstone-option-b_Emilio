@@ -37,6 +37,13 @@ Reglas concretas:
 
 La única operación segura es correr el pipeline completo desde la fase que cambió hasta el final.
 
+## Reset del pipeline
+Si el usuario dice "reinicia", "reinicia el pipeline", "corre desde cero" o similar:
+1. Correr `scripts/00_reset.py` primero — borra todos los charts y resetea el contador a 0
+2. Luego correr el pipeline completo desde la Fase 1
+
+No correr `00_reset.py` en ningún otro caso. No preguntar confirmación — si el usuario dijo "desde cero", proceder directamente.
+
 ## Quick start
 Si el usuario no especifica qué hacer, preséntale estas opciones:
 
@@ -106,10 +113,20 @@ Correr los scripts en este orden exacto (el auto-numerado de charts depende de l
 | 3 | scripts/03_analyse.py | 14 hallazgos en consola (obligatorios + auto-expansión + brechas) |
 | 4 | scripts/04_visualise.py | charts/01 a charts/12 |
 | 5 | scripts/06_correlations.py | charts/13 y charts/14 (correlaciones cruzadas) |
-| 6 | scripts/07_advanced.py | charts/15 a charts/18 (negativos, OLS, clustering, FDR) |
-| 7 | /interpret skill | scripts/05_interpret.md (interpretaciones policy-facing) |
-| 8 | scripts/08_featured.py | Bloque "Hallazgo Destacado" en analysis-report.md (rotativo por fecha) |
-| 9 | /publish-finding skill | Notion Findings Tracker (opcional) |
+| 6 | scripts/07_advanced.py | charts/15 a charts/19 (negativos, OLS, clustering, FDR, ahorro×ingreso) |
+| 7 | scripts/08_featured.py | Bloque "Hallazgo Destacado" en analysis-report.md (rotativo por fecha) |
+| 8 | scripts/09_explore_new.py | exploración adicional (sin charts) |
+| 9 | scripts/10_findings_new.py | charts/20-21 (meta×edad, deuda×ahorro) |
+| 10 | scripts/11_explore_more.py | charts/22-29 (correlaciones FDR: IA, edad×ahorro por país) |
+| 11 | scripts/12_deeper_stats.py | charts/30-34 (IC95%, Cohen's d, OLS por país) |
+| 12 | scripts/13_country_charts.py | charts/35-38 (perfiles por país) |
+| 13 | scripts/country_profiles.py | scripts/country_profiles.md |
+| 14 | scripts/14_finalize.py | Sincroniza analysis-report.md y 05_interpret.md con los charts reales |
+| 15 | /publish-finding skill | Notion Findings Tracker (opcional) |
+
+**Regla crítica:** scripts/14_finalize.py SIEMPRE corre como último paso obligatorio antes de publicar.
+Sincroniza automáticamente el índice de charts y todas las referencias de rutas en los documentos.
+Sin él, cualquier desincronización entre los números de chart y el reporte queda sin corregir.
 
 Country scripts: country_profiles.py → scripts/country_profiles.md
 
