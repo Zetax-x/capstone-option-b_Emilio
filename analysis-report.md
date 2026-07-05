@@ -111,26 +111,26 @@ Este informe presenta los hallazgos del análisis de la Encuesta de Bienestar Fi
 | 16 | `16_ols_coefficients.png` | Coeficientes OLS global | `07_advanced.py` | 5.2 |
 | 17 | `17_user_clusters.png` | Radar de tres clusters | `07_advanced.py` | 5.3 |
 | 18 | `18_fdr_bh_correction.png` | Corrección FDR Benjamini-Hochberg | `07_advanced.py` | 5.4 |
-| 19 | `19_meta_financiera_por_edad.png` | Heatmap meta × grupo de edad | `10_findings_new.py` | F15 |
-| 20 | `20_ratio_deuda_vs_ahorro.png` | Ratio deuda/ingreso vs. tasa ahorro | `10_findings_new.py` | F12 ext. |
-| 21 | `21_ia_vs_ingreso.png` | Horas IA vs. ingreso mensual | `11_explore_more.py` | F17 |
-| 22 | `22_edad_ahorro_méxico.png` | Edad vs. ahorro — México | `11_explore_more.py` | F19 |
-| 23 | `23_edad_ahorro_colombia.png` | Edad vs. ahorro — Colombia | `11_explore_more.py` | F19 |
-| 24 | `24_edad_ahorro_perú.png` | Edad vs. ahorro — Perú | `11_explore_more.py` | F19 |
-| 25 | `25_edad_ahorro_chile.png` | Edad vs. ahorro — Chile | `11_explore_more.py` | F19 |
-| 26 | `26_satisfaccion_vs_ahorro.png` | Satisfacción vs. tasa de ahorro | `11_explore_more.py` | F16 |
-| 27 | `27_edad_ahorro_brasil.png` | Edad vs. ahorro — Brasil | `11_explore_more.py` | F19 |
-| 28 | `28_ia_vs_tasa_ahorro.png` | Horas IA vs. tasa de ahorro | `11_explore_more.py` | F17 |
-| 29 | `29_forest_plot_ic95.png` | Forest plot — IC 95% para 10 correlaciones | `12_deeper_stats.py` | 5.0 |
-| 30 | `30_cohens_d.png` | Cohen's d — tamaño de efecto por grupos | `12_deeper_stats.py` | 5.0 |
-| 31 | `31_ols_por_pais.png` | R² del OLS por país | `12_deeper_stats.py` | 5.5 |
-| 32 | `32_educacion_dual_panel.png` | Doble panel: educación absoluta vs. % | `12_deeper_stats.py` | F18 |
-| 33 | `33_violines_pais.png` | Violines satisfacción y ahorro por país | `12_deeper_stats.py` | 4.5 |
-| 34 | `34_ingreso_ahorro_pais.png` | Ingreso mediano y tasa de ahorro por país | `13_country_charts.py` | 4.5 |
-| 35 | `35_vivienda_negativos_pais.png` | Carga vivienda y ahorradores negativos | `13_country_charts.py` | 4.5/F6 |
-| 36 | `36_gastos_desglose_pais.png` | Desglose de gastos por país (apilado) | `13_country_charts.py` | 4.5 |
-| 37 | `37_ia_satisfaccion_pais.png` | IA vs. satisfacción por país (scatter) | `13_country_charts.py` | 4.5/F10 |
-| 38 | `38_savings_rate_vs_income_by_age.png` | Tasa ahorro × ingreso por edad | `/interpret (Step 2)` | F2/F3 |
+| 19 | `19_savings_rate_vs_income_by_age.png` | Tasa ahorro × ingreso por edad | `/interpret (Step 2)` | F2/F3 |
+| 20 | `20_meta_financiera_por_edad.png` | Heatmap meta × grupo de edad | `10_findings_new.py` | F15 |
+| 21 | `21_ratio_deuda_vs_ahorro.png` | Ratio deuda/ingreso vs. tasa ahorro | `10_findings_new.py` | F12 ext. |
+| 22 | `22_ia_vs_ingreso.png` | Horas IA vs. ingreso mensual | `11_explore_more.py` | F17 |
+| 23 | `23_edad_ahorro_méxico.png` | Edad vs. ahorro — México | `11_explore_more.py` | F19 |
+| 24 | `24_edad_ahorro_colombia.png` | Edad vs. ahorro — Colombia | `11_explore_more.py` | F19 |
+| 25 | `25_edad_ahorro_perú.png` | Edad vs. ahorro — Perú | `11_explore_more.py` | F19 |
+| 26 | `26_edad_ahorro_chile.png` | Edad vs. ahorro — Chile | `11_explore_more.py` | F19 |
+| 27 | `27_satisfaccion_vs_ahorro.png` | Satisfacción vs. tasa de ahorro | `11_explore_more.py` | F16 |
+| 28 | `28_edad_ahorro_brasil.png` | Edad vs. ahorro — Brasil | `11_explore_more.py` | F19 |
+| 29 | `29_ia_vs_tasa_ahorro.png` | Horas IA vs. tasa de ahorro | `11_explore_more.py` | F17 |
+| 30 | `30_forest_plot_ic95.png` | Forest plot — IC 95% para 10 correlaciones | `12_deeper_stats.py` | 5.0 |
+| 31 | `31_cohens_d.png` | Cohen's d — tamaño de efecto por grupos | `12_deeper_stats.py` | 5.0 |
+| 32 | `32_ols_por_pais.png` | R² del OLS por país | `12_deeper_stats.py` | 5.5 |
+| 33 | `33_educacion_dual_panel.png` | Doble panel: educación absoluta vs. % | `12_deeper_stats.py` | F18 |
+| 34 | `34_violines_pais.png` | Violines satisfacción y ahorro por país | `12_deeper_stats.py` | 4.5 |
+| 35 | `35_ingreso_ahorro_pais.png` | Ingreso mediano y tasa de ahorro por país | `13_country_charts.py` | 4.5 |
+| 36 | `36_vivienda_negativos_pais.png` | Carga vivienda y ahorradores negativos | `13_country_charts.py` | 4.5/F6 |
+| 37 | `37_gastos_desglose_pais.png` | Desglose de gastos por país (apilado) | `13_country_charts.py` | 4.5 |
+| 38 | `38_ia_satisfaccion_pais.png` | IA vs. satisfacción por país (scatter) | `13_country_charts.py` | 4.5/F10 |
 
 ---
 
