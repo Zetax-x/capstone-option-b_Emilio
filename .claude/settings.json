@@ -14,14 +14,14 @@
         "matcher": "Write",
         "handler": {
           "type": "command",
-          "command": "f=\"$CLAUDE_FILE_PATH\"; if [[ \"$f\" == charts/*.png ]]; then n=$(ls charts/*.png 2>/dev/null | wc -l); echo \"Chart saved: $(basename $f) — $n/38 charts complete\"; fi"
+          "command": "bash .claude/hooks/chart-counter.sh"
         }
       },
       {
         "matcher": "Bash",
         "handler": {
           "type": "command",
-          "command": "echo \"$(date '+%Y-%m-%d %H:%M:%S') | exit:$CLAUDE_TOOL_RESULT_EXIT_CODE | $(echo $CLAUDE_TOOL_INPUT | head -c 120)\" >> session-log.md"
+          "command": "bash .claude/hooks/script-logger.sh"
         }
       }
     ],
