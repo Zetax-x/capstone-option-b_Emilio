@@ -122,7 +122,7 @@ Correr los scripts en este orden exacto (el auto-numerado de charts depende de l
 | 12 | scripts/13_country_charts.py | charts/35-38 (perfiles por país) |
 | 13 | scripts/country_profiles.py | scripts/country_profiles.md |
 | 14 | scripts/14_finalize.py | Sincroniza analysis-report.md y 05_interpret.md con los charts reales |
-| 15 | /publish-finding skill | Notion Findings Tracker (opcional) |
+| 15 | /publish-finding skill | Notion Findings Tracker (**manual** — no corre automáticamente) |
 
 **Regla crítica:** scripts/14_finalize.py SIEMPRE corre como último paso obligatorio antes de publicar.
 Sincroniza automáticamente el índice de charts y todas las referencias de rutas en los documentos.
@@ -134,7 +134,10 @@ Country scripts: country_profiles.py → scripts/country_profiles.md
 Integration: LatAm Pipeline
 Databases: "Findings Tracker", "Country Profiles"
 Report page: "Informe Ejecutivo"
-Push each finding after Phase 3 analysis. Push report after Phase 6.
+
+**La publicación a Notion es manual.** No se dispara automáticamente al terminar el pipeline.
+Para publicar los hallazgos, pedir explícitamente: "corre /publish-finding".
+Esto evita que Notion se actualice sin confirmación en cada ejecución del pipeline.
 
 ## Perfil del analista
 El análisis es producido por un analista de datos con capacidad para explicar conceptos estadísticos a cualquier tipo de lector. El estándar de claridad es: si un estudiante de preparatoria o alguien sin ningún conocimiento previo de estadística no puede entender la explicación, no está suficientemente explicada.

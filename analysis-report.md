@@ -21,7 +21,7 @@
 | **Correcciones múltiples** | FDR Benjamini-Hochberg aplicada en dos rondas (14 tests ronda 1, 32 tests ronda 2) |
 | **Intervalos de confianza** | IC 95% calculados para 10 correlaciones clave (Fisher-z) |
 | **Tamaños de efecto** | Cohen's d para 8 comparaciones de grupos |
-| **Pipeline** | 9 fases: exploración → limpieza → análisis → visualización → correlaciones → avanzado → interpretación → hallazgo rotativo → publicación |
+| **Pipeline** | 14 fases automáticas (exploración → limpieza → análisis → visualización → correlaciones → avanzado → interpretación → hallazgo rotativo → sincronización) + publicación a Notion **manual bajo demanda** |
 | **Scripts** | 13 scripts Python + 2 scripts de presentación Node.js |
 | **Fecha de análisis** | 04/07/2026 |
 
